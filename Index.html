@@ -3,139 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <title>Choisissez une cagnotte</title>
-  <!-- Police Marcovaldo -->
-  <link href="https://fonts.googleapis.com/css2?family=Marcovaldo&display=swap" rel="stylesheet" />
+  <!-- Police moderne et propre -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Marcovaldo', serif;
-      background-color: #fdfaf3;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfaf3; /* crème */
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      position: relative;
-      box-sizing: border-box;
     }
 
     h1 {
       color: #FF0084;
       text-align: center;
-      margin-top: 160px; /* descendu très bas */
-      margin-bottom: 40px;
-      font-size: 28px;
-      line-height: 1.3;
+      margin-top: 120px;
+      font-size: 24px;
+      line-height: 1.4;
       max-width: 90%;
     }
 
     .button-container {
+      margin-top: 60px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 60px;
-      width: 100%;
+      gap: 30px;
+      width: 80%;
+      max-width: 400px;
     }
 
     a.button,
     button.button {
       background-color: #556B2F;
       color: white;
-      font-size: 28px;
-      padding: 60px 0; /* très haut */
+      font-size: 22px;
+      padding: 30px;
       text-align: center;
       text-decoration: none;
-      border-radius: 12px;
       border: none;
+      border-radius: 25px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       cursor: pointer;
-      width: 70vw; /* très étroit */
-      max-width: 300px;
-      box-sizing: border-box;
-      transition: background-color 0.3s ease;
-      font-family: 'Marcovaldo', serif;
+      transition: all 0.2s ease-in-out;
       text-transform: uppercase;
     }
 
     a.button:hover,
     button.button:hover {
-      background-color: #42521f;
+      background-color: #3f521c;
+      transform: scale(1.03);
     }
 
     #footer {
-      position: absolute;
-      bottom: 60px; /* bien remonté */
-      font-size: 18px;
+      margin-top: auto;
+      margin-bottom: 40px;
+      font-size: 14px;
       color: #FF0084;
       text-align: center;
-      font-family: 'Marcovaldo', serif;
     }
 
-    /* Fenêtre modale */
+    /* Modal Wero */
     #weroModal {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 9999;
-      padding: 10px;
-      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #weroModalContent {
       background: white;
-      padding: 30px 20px;
-      width: 70vw; /* étroit */
-      max-width: 300px;
-      height: 350px; /* très haut */
-      margin: 100px auto;
-      border-radius: 12px;
+      padding: 30px;
+      width: 80%;
+      max-width: 320px;
+      border-radius: 20px;
       text-align: center;
-      position: relative;
-      font-family: 'Marcovaldo', serif;
-      font-size: 20px;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
       text-transform: uppercase;
+      color: #333;
+      position: relative;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
     }
 
     #weroModalContent span {
       position: absolute;
-      top: 12px;
-      right: 18px;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 26px;
     }
 
-    #weroModalContent p {
-      margin: 12px 0;
-    }
-
-    #weroModalContent p strong {
-      font-size: 2.2em;
+    #weroModalContent strong {
+      font-size: 1.8em;
       color: #FF0084;
+      display: block;
+      margin-top: 15px;
     }
 
     @media (max-width: 500px) {
       h1 {
-        font-size: 24px;
-        margin-top: 140px;
-        line-height: 1.4;
+        font-size: 20px;
+        margin-top: 100px;
       }
+
       a.button,
       button.button {
-        font-size: 24px;
-        padding: 50px 0;
-      }
-      #weroModalContent {
         font-size: 18px;
-        height: 320px;
+        padding: 25px;
       }
-      #weroModalContent p strong {
-        font-size: 2em;
+
+      #footer {
+        font-size: 12px;
       }
     }
   </style>
@@ -143,33 +129,24 @@
 <body>
 
   <h1>
-    Merci pour votre<br />
-    Achat !<br />
-    Veuillez sélectionner<br />votre mode de paiement
+    Merci pour votre achat !<br />
+    Veuillez sélectionner votre<br />
+    mode de paiement
   </h1>
 
   <div class="button-container">
-    <a
-      class="button"
-      href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete"
-      target="_blank"
-    >Lydia</a>
-
-    <a
-      class="button"
-      href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ"
-      target="_blank"
-    >PayPal</a>
-
+    <a class="button" href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete" target="_blank">Lydia</a>
+    <a class="button" href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ" target="_blank">PayPal</a>
     <button class="button" onclick="openModal()">Wero</button>
   </div>
 
+  <!-- Fenêtre modale -->
   <div id="weroModal">
     <div id="weroModalContent">
       <span onclick="closeModal()">&times;</span>
-      <p>POUR LES VIREMENTS WERO,</p>
-      <p>VOICI LE NUMÉRO DE TÉLÉPHONE DU BÉNÉFICIAIRE À COPIER :</p>
-      <p><strong>0750812934</strong></p>
+      POUR LES VIREMENTS WERO,<br />
+      VOICI LE NUMÉRO DU BÉNÉFICIAIRE :
+      <strong>0750812934</strong>
     </div>
   </div>
 
@@ -177,7 +154,7 @@
 
   <script>
     function openModal() {
-      document.getElementById('weroModal').style.display = 'block';
+      document.getElementById('weroModal').style.display = 'flex';
     }
 
     function closeModal() {
