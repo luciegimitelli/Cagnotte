@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Choisissez une cagnotte</title>
-  <!-- Import police Prata -->
-  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet" />
+  <!-- Import police Anton pour effet style "Poster" Instagram -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Prata', serif;
+      font-family: 'Anton', sans-serif;
       background-color: #fdfaf3; /* crème / ivoire */
-      margin: 20px 40px; /* marges moins larges */
+      margin: 20px 30px;
       padding: 0;
       display: flex;
       flex-direction: column;
@@ -19,18 +19,20 @@
     }
 
     h1 {
-      color: #FF0084; /* nouveau rose */
+      color: #FF0084; /* rose */
       text-align: center;
       margin-top: 30px;
-      margin-bottom: 50px;
-      font-size: 32px; /* plus gros */
-      line-height: 1.3;
+      margin-bottom: 25px; /* rapproché de la fenêtre */
+      font-size: 28px; /* taille adaptée */
+      line-height: 1.2;
+      max-width: 480px;
+      /* Texte sur 3 lignes avec retours forcés */
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
-      gap: 40px; /* espacement entre boutons */
+      gap: 40px;
       align-items: center;
       width: 100%;
       max-width: 480px;
@@ -40,122 +42,27 @@
 
     a.button,
     button.button {
-      background-color: #556B2F; /* vert demandé */
+      background-color: #556B2F; /* vert */
       color: white;
-      font-size: 26px; /* plus gros */
+      font-size: 26px;
       padding: 25px 0;
       text-align: center;
       text-decoration: none;
       border-radius: 12px;
       border: none;
       cursor: pointer;
-      width: 100%; /* même taille */
+      width: 100%;
       max-width: 480px;
       box-sizing: border-box;
       transition: background-color 0.3s ease;
-      font-family: 'Prata', serif;
+      font-family: 'Anton', sans-serif;
     }
 
     a.button:hover,
     button.button:hover {
-      background-color: #42521f; /* vert olive foncé pour hover */
+      background-color: #42521f; /* vert foncé hover */
     }
 
     #footer {
       margin-top: 60px;
-      font-size: 18px; /* plus gros */
-      color: #FF0084;
-      text-align: center;
-      font-family: 'Prata', serif;
-    }
-
-    /* Fenêtre modale */
-    #weroModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 9999;
-    }
-
-    #weroModalContent {
-      background: white;
-      padding: 25px 30px;
-      max-width: 420px;
-      margin: 120px auto;
-      border-radius: 12px;
-      text-align: center;
-      position: relative;
-      font-family: 'Prata', serif;
-      font-size: 18px;
-      color: #333;
-    }
-
-    #weroModalContent span {
-      position: absolute;
-      top: 12px;
-      right: 18px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 24px;
-    }
-
-    #weroModalContent p {
-      margin: 16px 0;
-    }
-
-    #weroModalContent p strong {
-      font-size: 1.8em;
-      color: #FF0084;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>
-    Merci pour votre Achat !<br />
-    Veuillez sélectionner votre mode de paiement
-  </h1>
-
-  <div class="button-container">
-    <a
-      class="button"
-      href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete"
-      target="_blank"
-      >Lydia</a
-    >
-    <a
-      class="button"
-      href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ"
-      target="_blank"
-      >PayPal</a
-    >
-    <button class="button" onclick="openModal()">Wero</button>
-  </div>
-
-  <!-- Fenêtre modale Wero -->
-  <div id="weroModal">
-    <div id="weroModalContent">
-      <span onclick="closeModal()">&times;</span>
-      <p>
-        Pour les virements Wero, voici le numéro de téléphone du bénéficiaire
-        à copier :
-      </p>
-      <p><strong>0750812934</strong></p>
-    </div>
-  </div>
-
-  <div id="footer">Lucie Gimitelli - Linogravure</div>
-
-  <script>
-    function openModal() {
-      document.getElementById('weroModal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('weroModal').style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+      font-size: 18px
