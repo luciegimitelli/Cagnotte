@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Choisissez une cagnotte</title>
+  <!-- Import police Prata -->
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Prata', serif;
       background-color: #fdfaf3; /* crème / ivoire */
-      margin: 0;
+      margin: 20px 40px; /* marges moins larges */
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     h1 {
-      color: #d6336c; /* rose */
+      color: #FF0084; /* nouveau rose */
       text-align: center;
-      margin-top: 40px;
-      margin-bottom: 60px;
-      font-size: 24px;
-      line-height: 1.4;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      font-size: 32px; /* plus gros */
+      line-height: 1.3;
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 40px; /* espacement entre boutons */
       align-items: center;
       width: 100%;
-      max-width: 400px;
+      max-width: 480px;
+      flex-grow: 1;
+      justify-content: center;
     }
 
-    a.button, button.button {
-      background-color: #708238; /* vert olive */
+    a.button,
+    button.button {
+      background-color: #556B2F; /* vert demandé */
       color: white;
-      font-size: 20px;
-      padding: 20px 30px;
+      font-size: 26px; /* plus gros */
+      padding: 25px 0;
       text-align: center;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       border: none;
       cursor: pointer;
-      width: 100%;
+      width: 100%; /* même taille */
+      max-width: 480px;
+      box-sizing: border-box;
       transition: background-color 0.3s ease;
+      font-family: 'Prata', serif;
     }
 
-    a.button:hover, button.button:hover {
-      background-color: #5e6f2d; /* olive foncé */
+    a.button:hover,
+    button.button:hover {
+      background-color: #42521f; /* vert olive foncé pour hover */
     }
 
     #footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #d6336c;
+      margin-top: 60px;
+      font-size: 18px; /* plus gros */
+      color: #FF0084;
       text-align: center;
+      font-family: 'Prata', serif;
     }
 
     /* Fenêtre modale */
@@ -71,42 +81,56 @@
 
     #weroModalContent {
       background: white;
-      padding: 20px;
-      max-width: 400px;
-      margin: 100px auto;
-      border-radius: 10px;
+      padding: 25px 30px;
+      max-width: 420px;
+      margin: 120px auto;
+      border-radius: 12px;
       text-align: center;
       position: relative;
+      font-family: 'Prata', serif;
+      font-size: 18px;
+      color: #333;
     }
 
     #weroModalContent span {
       position: absolute;
-      top: 10px;
-      right: 15px;
+      top: 12px;
+      right: 18px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 24px;
     }
 
     #weroModalContent p {
-      margin: 10px 0;
+      margin: 16px 0;
     }
 
     #weroModalContent p strong {
-      font-size: 1.6em;
-      color: #d6336c;
+      font-size: 1.8em;
+      color: #FF0084;
     }
   </style>
 </head>
 <body>
 
   <h1>
-    Merci pour votre Achat !<br>
+    Merci pour votre Achat !<br />
     Veuillez sélectionner votre mode de paiement
   </h1>
 
   <div class="button-container">
-    <a class="button" href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete" target="_blank">Lydia</a>
-    <a class="button" href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ" target="_blank">PayPal</a>
+    <a
+      class="button"
+      href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete"
+      target="_blank"
+      >Lydia</a
+    >
+    <a
+      class="button"
+      href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ"
+      target="_blank"
+      >PayPal</a
+    >
     <button class="button" onclick="openModal()">Wero</button>
   </div>
 
@@ -114,7 +138,10 @@
   <div id="weroModal">
     <div id="weroModalContent">
       <span onclick="closeModal()">&times;</span>
-      <p>Pour les virements Wero, voici le numéro de téléphone du bénéficiaire à copier :</p>
+      <p>
+        Pour les virements Wero, voici le numéro de téléphone du bénéficiaire
+        à copier :
+      </p>
       <p><strong>0750812934</strong></p>
     </div>
   </div>
@@ -130,6 +157,5 @@
       document.getElementById('weroModal').style.display = 'none';
     }
   </script>
-
 </body>
 </html>
