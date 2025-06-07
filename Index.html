@@ -2,70 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Choisissez une cagnotte</title>
-  <!-- Police moderne et propre -->
+  <title>Cagnotte</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fdfaf3; /* crème */
       margin: 0;
       padding: 0;
+      background-color: #fdfaf3;
+      font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       min-height: 100vh;
-    }
-
-    h1 {
-      color: #FF0084;
-      text-align: center;
-      margin-top: 120px;
-      font-size: 24px;
-      line-height: 1.4;
-      max-width: 90%;
+      gap: 30px;
     }
 
     .button-container {
-      margin-top: 60px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 30px;
-      width: 80%;
+      width: 90%;
       max-width: 400px;
     }
 
     a.button,
     button.button {
-      background-color: #556B2F;
-      color: white;
-      font-size: 22px;
-      padding: 30px;
+      width: 100%;
+      aspect-ratio: 1 / 1; /* carré */
+      border-radius: 20px;
+      border: 4px solid #556B2F;
+      background-color: transparent;
+      color: #556B2F;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
       text-align: center;
       text-decoration: none;
-      border: none;
-      border-radius: 25px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       cursor: pointer;
       transition: all 0.2s ease-in-out;
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     a.button:hover,
     button.button:hover {
-      background-color: #3f521c;
-      transform: scale(1.03);
+      background-color: #eef2e3;
     }
 
-    #footer {
-      margin-top: auto;
-      margin-bottom: 40px;
-      font-size: 14px;
-      color: #FF0084;
-      text-align: center;
-    }
-
-    /* Modal Wero */
+    /* Modal */
     #weroModal {
       display: none;
       position: fixed;
@@ -103,36 +90,13 @@
 
     #weroModalContent strong {
       font-size: 1.8em;
-      color: #FF0084;
+      color: #556B2F;
       display: block;
       margin-top: 15px;
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 20px;
-        margin-top: 100px;
-      }
-
-      a.button,
-      button.button {
-        font-size: 18px;
-        padding: 25px;
-      }
-
-      #footer {
-        font-size: 12px;
-      }
     }
   </style>
 </head>
 <body>
-
-  <h1>
-    Merci pour votre achat !<br />
-    Veuillez sélectionner votre<br />
-    mode de paiement
-  </h1>
 
   <div class="button-container">
     <a class="button" href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete" target="_blank">Lydia</a>
@@ -140,17 +104,14 @@
     <button class="button" onclick="openModal()">Wero</button>
   </div>
 
-  <!-- Fenêtre modale -->
-  <div id="weroModal">
+  <div id="weroModal" style="display: none;">
     <div id="weroModalContent">
       <span onclick="closeModal()">&times;</span>
-      POUR LES VIREMENTS WERO,<br />
-      VOICI LE NUMÉRO DU BÉNÉFICIAIRE :
+      Pour les virements Wero,<br />
+      voici le numéro du bénéficiaire :
       <strong>0750812934</strong>
     </div>
   </div>
-
-  <div id="footer">Lucie Gimitelli - Linogravure</div>
 
   <script>
     function openModal() {
