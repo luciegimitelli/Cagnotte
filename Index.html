@@ -1,60 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Choisissez une cagnotte</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        a.button, button.button {
-            display: inline-block;
-            margin: 15px;
-            padding: 15px 25px;
-            font-size: 18px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        a.button:hover, button.button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Choisissez une cagnotte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfaf3; /* crème / ivoire */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #d6336c; /* rose */
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 60px;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    a.button, button.button {
+      background-color: #708238; /* vert olive */
+      color: white;
+      font-size: 20px;
+      padding: 20px 30px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover, button.button:hover {
+      background-color: #5e6f2d; /* olive foncé */
+    }
+
+    #footer {
+      margin-top: 80px;
+      font-size: 14px;
+      color: #d6336c;
+      text-align: center;
+    }
+
+    /* Fenêtre modale */
+    #weroModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 9999;
+    }
+
+    #weroModalContent {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: 100px auto;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    #weroModalContent span {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #weroModalContent p {
+      margin: 10px 0;
+    }
+
+    #weroModalContent p strong {
+      font-size: 1.6em;
+      color: #d6336c;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Choisissez une cagnotte pour contribuer</h1>
+  <h1>
+    Merci pour votre Achat !<br>
+    Veuillez sélectionner votre mode de paiement
+  </h1>
 
+  <div class="button-container">
     <a class="button" href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete" target="_blank">Lydia</a>
     <a class="button" href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ" target="_blank">PayPal</a>
     <button class="button" onclick="openModal()">Wero</button>
+  </div>
 
-    <!-- Fenêtre modale pour Wero -->
-    <div id="weroModal" style="display: none; position: fixed; top: 0; left: 0;
-        width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999;">
-        <div style="background: white; padding: 20px; max-width: 400px;
-            margin: 100px auto; border-radius: 10px; text-align: center; position: relative;">
-            <span onclick="closeModal()" style="position: absolute; top: 10px; right: 15px;
-                cursor: pointer; font-weight: bold;">&times;</span>
-            <p>Pour les virements Wero, voici le numéro de téléphone du bénéficiaire à copier :</p>
-            <p style="font-size: 1.5em; font-weight: bold; color: #d6336c;">0750812934</p>
-        </div>
+  <!-- Fenêtre modale Wero -->
+  <div id="weroModal">
+    <div id="weroModalContent">
+      <span onclick="closeModal()">&times;</span>
+      <p>Pour les virements Wero, voici le numéro de téléphone du bénéficiaire à copier :</p>
+      <p><strong>0750812934</strong></p>
     </div>
+  </div>
 
-    <script>
-        function openModal() {
-            document.getElementById('weroModal').style.display = 'block';
-        }
+  <div id="footer">Lucie Gimitelli - Linogravure</div>
 
-        function closeModal() {
-            document.getElementById('weroModal').style.display = 'none';
-        }
-    </script>
+  <script>
+    function openModal() {
+      document.getElementById('weroModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('weroModal').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
