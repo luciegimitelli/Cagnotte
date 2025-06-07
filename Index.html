@@ -65,4 +65,140 @@
 
     #footer {
       margin-top: 60px;
-      font-size: 18px
+      font-size: 18px;
+      color: #FF0084;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+    }
+
+    /* Fenêtre modale */
+    #weroModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 9999;
+      padding: 10px; /* petit padding pour mobile */
+      box-sizing: border-box;
+    }
+
+    #weroModalContent {
+      background: white;
+      padding: 20px 25px;
+      max-width: 400px;
+      height: 180px; /* moins haute */
+      margin: 60px auto;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      font-family: 'Anton', sans-serif;
+      font-size: 18px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #weroModalContent span {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    #weroModalContent p {
+      margin: 6px 0;
+    }
+
+    #weroModalContent p strong {
+      font-size: 1.8em;
+      color: #FF0084;
+    }
+
+    /* Responsive mobile */
+    @media (max-width: 500px) {
+      body {
+        margin: 10px 15px;
+      }
+      h1 {
+        font-size: 24px;
+        max-width: 100%;
+        margin-bottom: 15px;
+      }
+      .button-container {
+        max-width: 100%;
+        gap: 30px;
+      }
+      a.button,
+      button.button {
+        font-size: 22px;
+        padding: 20px 0;
+        max-width: 100%;
+      }
+      #weroModalContent {
+        width: 90vw;
+        max-width: none;
+        height: auto;
+        margin: 40px auto;
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+      #weroModalContent p strong {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    Merci pour votre<br />
+    Achat !<br />
+    Veuillez sélectionner votre mode de paiement
+  </h1>
+
+  <div class="button-container">
+    <a
+      class="button"
+      href="https://pots.lydia.me/collect/pots?id=93814-linogravure-st-sulpice-en-fete"
+      target="_blank"
+      >Lydia</a
+    >
+    <a
+      class="button"
+      href="https://www.paypal.com/qrcodes/p2pqrc/SAHMXC7PFQMTJ"
+      target="_blank"
+      >PayPal</a
+    >
+    <button class="button" onclick="openModal()">Wero</button>
+  </div>
+
+  <!-- Fenêtre modale Wero -->
+  <div id="weroModal">
+    <div id="weroModalContent">
+      <span onclick="closeModal()">&times;</span>
+      <p>
+        Pour les virements Wero, voici le numéro de téléphone du bénéficiaire
+        à copier :
+      </p>
+      <p><strong>0750812934</strong></p>
+    </div>
+  </div>
+
+  <div id="footer">Lucie Gimitelli - Linogravure</div>
+
+  <script>
+    function openModal() {
+      document.getElementById('weroModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('weroModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
